@@ -12,6 +12,7 @@ const delay = 5
 
 func main() {
 	exibeIntroducao()
+	lerArquivoDeSites()
 
 	for {
 		exibeMenu()
@@ -83,4 +84,11 @@ func testandoSites(site string) {
 	} else {
 		fmt.Println("Site:", site, "Esta com problemas, status code:", resp.StatusCode)
 	}
+}
+
+func lerArquivoDeSites() []string {
+	var sites []string
+	arquivo, _ := os.Open("sites.txt")
+	fmt.Println(arquivo)
+	return sites
 }
